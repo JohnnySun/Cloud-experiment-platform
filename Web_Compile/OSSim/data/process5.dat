@@ -1,0 +1,10 @@
+# Process name: must be unique among all
+# processes for any given simulation.
+PROCESS5
+
+# Process arrival time:
+4
+
+START
+CPU 4
+EXIT

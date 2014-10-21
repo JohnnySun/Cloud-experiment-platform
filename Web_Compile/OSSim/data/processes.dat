@@ -1,0 +1,16 @@
+# Baseline algorithm, used to evaluate submission
+SJF algorithm
+# Expected system turnaround time, used to evaluate submission
+2.1
+# Cost for each system call (interrupt, scheduling etc)
+0
+# Timer interrupt interval
+0
+# These three processes have a variety of 
+# arrival times and CPU burst length. 
+# The processes do not perform any I/O.
+/usr/local/Web_Compile/OSSim/data/process1.dat
+/usr/local/Web_Compile/OSSim/data/process2.dat
+/usr/local/Web_Compile/OSSim/data/process3.dat
+/usr/local/Web_Compile/OSSim/data/process4.dat
+/usr/local/Web_Compile/OSSim/data/process5.dat

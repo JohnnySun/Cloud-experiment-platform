@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>登陆</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./login/main.css">
+</head>
+
+<body>
+<div class="acenter">
+	<h1>登录</h1>
+	<fieldset class="login">
+		<legend>请登录</legend>
+		<form method="POST" action="login.php" onsubmit="return validate_form(this)" id="form">
+			<p><label for="user">姓名：</label> <input type="text" name="name" id="user"></p><br>
+			<p><label for="pwd">学号：</label> <input type="text" name="number" id="pwd">
+			<br><br>
+			<p align="center"><input type="reset" value="重置"><input type="submit" value="登陆"></p>
+		</form>
+	</fieldset>
+</div>
+
+<div class="loading-bar hide"><div></div></div>
+<div class="info-bar hide"><div>Error</div><sup>×</sup></div>
+<script type="text/javascript" src="./login/jquery.js"></script>
+<script type="text/javascript">
+
+	if($("#user").val()==""||$("#pwd").val()==""){
+		alert("请仔细填写并核对您的信息~不然可就没成绩了~");
+	}
+
+
+</script>
+
+</body></html>

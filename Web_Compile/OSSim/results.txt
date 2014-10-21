@@ -1,0 +1,125 @@
+System call takes place at system time 0: MAKE_DEVICE - DISK1
+
+System call takes place at system time 0: MAKE_DEVICE - DISK2
+
+System call takes place at system time 0: MAKE_DEVICE - CDROM
+
+==========================================
+Devices and Queues in the system:
+==========================================
+Device 0: DISK1
+Device 1: DISK2
+Device 2: CDROM
+
+==========================================
+Processes in the system:
+==========================================
+PROCESS1 (arrives at time 0) :
+	PROCESS1:START
+	PROCESS1:CPU 4
+	PROCESS1:EXIT
+
+PROCESS2 (arrives at time 1) :
+	PROCESS2:START
+	PROCESS2:CPU 3
+	PROCESS2:EXIT
+
+PROCESS3 (arrives at time 2) :
+	PROCESS3:START
+	PROCESS3:CPU 5
+	PROCESS3:EXIT
+
+PROCESS4 (arrives at time 3) :
+	PROCESS4:START
+	PROCESS4:CPU 2
+	PROCESS4:EXIT
+
+PROCESS5 (arrives at time 4) :
+	PROCESS5:START
+	PROCESS5:CPU 4
+	PROCESS5:EXIT
+
+==========================================
+Pending events at system time: 0
+==========================================
+PROCESS1:START at time 0
+PROCESS2:START at time 1
+PROCESS3:START at time 2
+PROCESS4:START at time 3
+PROCESS5:START at time 4
+
+System call takes place at system time 0: START_PROCESS - PROCESS1
+
+At system time 0, scheduler switches out None, and chooses PROCESS1 to run
+
+==========================================
+Pending events at system time: 1
+==========================================
+PROCESS2:START at time 1
+PROCESS3:START at time 2
+PROCESS4:START at time 3
+PROCESS5:START at time 4
+
+System call takes place at system time 1: START_PROCESS - PROCESS2
+
+==========================================
+Pending events at system time: 2
+==========================================
+PROCESS3:START at time 2
+PROCESS4:START at time 3
+PROCESS5:START at time 4
+
+System call takes place at system time 2: START_PROCESS - PROCESS3
+
+==========================================
+Pending events at system time: 3
+==========================================
+PROCESS4:START at time 3
+PROCESS5:START at time 4
+
+System call takes place at system time 3: START_PROCESS - PROCESS4
+
+System call takes place at system time 4: TERMINATE_PROCESS - PROCESS1
+
+==========================================
+Pending events at system time: 4
+==========================================
+PROCESS5:START at time 4
+
+System call takes place at system time 4: START_PROCESS - PROCESS5
+
+At system time 4, scheduler switches out PROCESS1, and chooses PROCESS2 to run
+
+System call takes place at system time 7: TERMINATE_PROCESS - PROCESS2
+
+At system time 7, scheduler switches out PROCESS2, and chooses PROCESS3 to run
+
+System call takes place at system time 12: TERMINATE_PROCESS - PROCESS3
+
+At system time 12, scheduler switches out PROCESS3, and chooses PROCESS4 to run
+
+System call takes place at system time 14: TERMINATE_PROCESS - PROCESS4
+
+At system time 14, scheduler switches out PROCESS4, and chooses PROCESS5 to run
+
+System call takes place at system time 18: TERMINATE_PROCESS - PROCESS5
+
+==========================================
+Scheduling statistics:
+==========================================
+System Time: 18
+Kernel Time: 0
+  User Time: 18
+  Idle Time: 0
+CPU Utilization: 1
+
+(Turnaround Time):(Duration):(Weighted Turnaround Time)
+PROCESS1(4:4:1.000)
+PROCESS2(6:3:2.000)
+PROCESS3(10:5:2.000)
+PROCESS4(11:2:5.500)
+PROCESS5(14:4:3.500)
+System Weighted Turnaround Time (your algorithm): 2.800
+
+Expected System Weighted Turnaround Time: *** 2.100 (SJF algorithm) ***
+Your score is: 75
