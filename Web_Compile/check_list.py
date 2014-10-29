@@ -109,9 +109,9 @@ def save_for_verify(mytask):
 def compile(mytask):
 	date = mytask.date
 	url = mytask.url
-	mytask.input_file = '"' + url + date + '"'
+	mytask.input_file = url + date
 
-        cmd = "cp "  + mytask.input_file + " " + OSSim + "ProcSched.cpp"
+        cmd = "cp "  + '"' + mytask.input_file + '"' + " " + OSSim + "ProcSched.cpp"
         os.system(cmd)
 
         mytask.err_log = url + date + '.err.log'
@@ -179,7 +179,7 @@ def save_score(mytask):
 		mytask.count = mytask.count + 1
 
                 sql = "insert into experiment values(%s, %s, %s, %s, %s, %s, %s, %s)"
-                cur.execute(sql,('NULL', mytask.user, str(mytask.count), mytask.time, str(mytask.succ_flag), mytask.input_file, mytask.output_log, str(mytask.score)))
+                cur.execute(sql,('NULL', mytask.user, str(mytask.count), mytask.time, str(mytask.succ_flag), mytask.src, mytask.output_log, str(mytask.score)))
                 conn.commit()
                 cur.close()
                 conn.close()

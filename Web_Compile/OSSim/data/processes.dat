@@ -1,11 +1,11 @@
 # Baseline algorithm, used to evaluate submission
 SJF algorithm
 # Expected system turnaround time, used to evaluate submission
-2.1
+3.29
 # Cost for each system call (interrupt, scheduling etc)
 0
 # Timer interrupt interval
-0
+1
 # These three processes have a variety of 
 # arrival times and CPU burst length. 
 # The processes do not perform any I/O.
